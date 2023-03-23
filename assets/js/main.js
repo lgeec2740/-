@@ -1,5 +1,6 @@
 var app = new Vue({
     el: '#app',
+    name:'App',
     data(){return {
         isMain: true,
         isAll: false,
