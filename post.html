@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Статейка</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+  <header class="bg-primary text-white py-2">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand text-white">Статейка</a>
+
+      <nav class="nav">
+        <a href="#" class="nav-link text-white" @click="enterMain">Главная</a>
+        <a href="#" class="nav-link text-white" @click="enterAll">Все статьи</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" v-if="isPost">
+    <section class="py-5">
+      <h2 class="mb-4">Название статьи</h2>
+
+      <img class="mb-4 w-100" src="assets/images/placeholder-blue.png" alt="placeholder">
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dignissimos sequi similique. Asperiores atque
+        autem cumque eius expedita id illo incidunt laborum libero magni neque nostrum nulla quaerat quam quas repellat
+        repudiandae sed soluta, totam veniam. Accusantium at commodi consequatur, dolore est facere fugiat maiores modi,
+        nemo perspiciatis placeat, quae quaerat quas quibusdam quos reiciendis rem sunt tenetur ut voluptatibus.
+        Aspernatur, autem blanditiis, commodi consequuntur culpa cumque, deserunt dignissimos eius expedita illo ipsam
+        iste officiis quam quasi qui quidem recusandae sint soluta. Aliquam aliquid consectetur dolores id? Animi, aut
+        doloremque error illo labore laudantium, maxime molestias nesciunt porro, sunt ut!
+      </p>
+    </section>
+  </div>
+</div>
+<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\vue.js"></script>
+<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\main.js"></script>
+</body>
+</html>

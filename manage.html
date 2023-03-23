@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Статейка</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+  <header class="bg-primary text-white py-2">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand text-white">Статейка</a>
+
+      <nav class="nav">
+        <a href="#" class="nav-link text-white" @click="enterMain">Главная</a>
+        <a href="#" class="nav-link text-white" @click="enterAll">Все статьи</a>
+        <a href="#" class="nav-link text-white" @click="enterManage">Управление статьями</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" v-if="isManage">
+    <section class="py-5">
+      <div class="mb-4 d-flex justify-content-between align-items-center">
+        <h2>Управление статьями</h2>
+        <button class="btn btn-sm btn-success">Добавить статью</button>
+      </div>
+
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Название</th>
+          <th>Дата и время</th>
+          <th>Действия</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Статья 1</td>
+          <td>09.04.2021 16:00</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Редактировать</button>
+            <button class="btn btn-danger btn-sm">Удалить</button>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</div>
+<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\vue.js"></script>
+<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\main.js"></script>
+</body>
+</html>

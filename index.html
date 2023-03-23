@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Статейка</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+  <header class="bg-primary text-white py-2">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand text-white">Статейка</a>
+      <nav class="nav">
+        <a href="#" class="nav-link text-white" @click="enterMain">Главная</a>
+        <a href="#" class="nav-link text-white" @click="enterAll">Все статьи</a>
+        <a href="#" class="nav-link text-white" @click="enterManage">Управление статьями</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" v-if="isMain">
+    <section class="py-5">
+      <div class="mb-4 d-flex justify-content-between align-items-center">
+        <h1>Актуальное</h1>
+        <button class="btn btn-sm btn-primary" @click="enterAll">Все статьи</button>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
+            <div class="card-body">
+              <p class="card-text">
+                <small class="text-muted">09.04.2021 16:00</small>
+              </p>
+
+              <h5 v-for="article in articles" class="card-title">Название статьи</h5>
+              <p class="card-text">Описание статьи</p>
+
+              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
+            <div class="card-body">
+              <p class="card-text">
+                <small class="text-muted">08.04.2021 16:00</small>
+              </p>
+
+              <h5 class="card-title">Название статьи</h5>
+              <p class="card-text">Описание статьи</p>
+
+              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
+            <div class="card-body">
+              <p class="card-text">
+                <small class="text-muted">07.04.2021 16:00</small>
+              </p>
+
+              <h5 class="card-title">Название статьи</h5>
+              <p class="card-text">Описание статьи</p>
+
+              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
+            <div class="card-body">
+              <p class="card-text">
+                <small class="text-muted">06.04.2021 16:00</small>
+              </p>
+
+              <h5 class="card-title">Название статьи</h5>
+              <p class="card-text">Описание статьи</p>
+
+              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="mb-4 d-flex justify-content-between align-items-center">
+        <h2>Случайная статья</h2>
+      </div>
+
+
+      <a href="#" class="card bg-dark text-white">
+        <img class="card-img" src="assets/images/placeholder-blue.png" alt="placeholder">
+        <div class="card-img-overlay">
+          <h5 class="card-title" @click="enterPost">Название статьи</h5>
+        </div>
+      </a>
+    </section>
+  </div>
+</div>
+<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\vue.js"></script>
+<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\main.js"></script>
+</body>
+</html>
