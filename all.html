@@ -14,136 +14,33 @@
       <a href="#" class="navbar-brand text-white">Статейка</a>
 
       <nav class="nav">
-        <a href="#" class="nav-link text-white" @click="enterMain">Главная</a>
-        <a href="#" class="nav-link text-white" @click="enterAll">Все статьи</a>
+        <a href="#" class="nav-link text-white" to="/index.html">Главная</a>
+        <a href="#" class="nav-link text-white" to="/all.html">Все статьи</a>
       </nav>
     </div>
   </header>
 
-  <div class="container" v-if="isAll">
+  <div class="container">
     <section class="py-5">
       <div class="mb-4 d-flex  align-items-baseline">
         <h2>Все статьи</h2>
       </div>
 
       <div class="row">
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
+        <div v-for="(item, index) in articles" 
+        :key="index"
+        class="col-3">
+          <div class="card">
+            <img class="card-img-top" :src="item.image" alt="placeholder">
             <div class="card-body">
               <p class="card-text">
-                <small class="text-muted">09.04.2021 16:00</small>
+                <small class="text-muted">{{item.date}}</small>
               </p>
 
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">{{item.description}}</p>
 
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
-            <div class="card-body">
-              <p class="card-text">
-                <small class="text-muted">08.04.2021 16:00</small>
-              </p>
-
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
-
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
-            <div class="card-body">
-              <p class="card-text">
-                <small class="text-muted">07.04.2021 16:00</small>
-              </p>
-
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
-
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
-            <div class="card-body">
-              <p class="card-text">
-                <small class="text-muted">06.04.2021 16:00</small>
-              </p>
-
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
-
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
-            <div class="card-body">
-              <p class="card-text">
-                <small class="text-muted">05.04.2021 16:00</small>
-              </p>
-
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
-
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
-            <div class="card-body">
-              <p class="card-text">
-                <small class="text-muted">04.04.2021 16:00</small>
-              </p>
-
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
-
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
-            <div class="card-body">
-              <p class="card-text">
-                <small class="text-muted">03.04.2021 16:00</small>
-              </p>
-
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
-
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/placeholder-blue.png" alt="placeholder">
-            <div class="card-body">
-              <p class="card-text">
-                <small class="text-muted">02.04.2021 16:00</small>
-              </p>
-
-              <h5 class="card-title">Название статьи</h5>
-              <p class="card-text">Описание статьи</p>
-
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
+              <a href="#" class="btn btn-primary" to="/post.html">Читать</a>
             </div>
           </div>
         </div>
@@ -151,7 +48,13 @@
     </section>
   </div>
 </div>
-<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\vue.js"></script>
-<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\main.js"></script>
+<script src="assets/js/vue.min.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="assets/js/data.js"></script>
+<script>
+  export default {
+      name: "all"
+  }
+</script>
 </body>
 </html>

@@ -13,23 +13,21 @@
     <div class="container d-flex justify-content-between">
       <a href="#" class="navbar-brand text-white">Статейка</a>
       <nav class="nav">
-        <a href="#" class="nav-link text-white" @click="enterMain">Главная</a>
-        <a href="#" class="nav-link text-white" @click="enterAll">Все статьи</a>
-        <a href="#" class="nav-link text-white" @click="enterManage">Управление статьями</a>
+        <a href="#" class="nav-link text-white" to="/index.html">Главная</a>
+        <a href="#" class="nav-link text-white" to="/all.html">Все статьи</a>
+        <a href="#" class="nav-link text-white" to="/manage.html">Управление статьями</a>
       </nav>
     </div>
   </header>
 
-  <div class="container" v-if="isMain">
+  <div class="container">
     <section class="py-5">
       <div class="mb-4 d-flex justify-content-between align-items-center">
         <h1>Актуальное</h1>
-        <button class="btn btn-sm btn-primary" @click="enterAll">Все статьи</button>
-      </div>
-
+        <button class="btn btn-sm btn-primary" to="/all.html">Все статьи</button>
+      </div> 
       <div class="row">
-        <div 
-        v-for="(item, index) in articles" 
+        <div v-for="(item, index) in articles" 
         :key="index"
         class="col-3">
           <div class="card">
@@ -42,7 +40,7 @@
               <h5 class="card-title">{{item.name}}</h5>
               <p class="card-text">{{item.description}}</p>
 
-              <a href="#" class="btn btn-primary" @click="enterPost">Читать</a>
+              <a href="#" class="btn btn-primary" to="/post.html">Читать</a>
             </div>
           </div>
         </div>
@@ -57,8 +55,8 @@
 
       <a href="#" class="card bg-dark text-white">
         <img class="card-img" src="assets/images/placeholder-blue.png" alt="placeholder">
-        <div class="card-img-overlay">
-          <h5 class="card-title" @click="enterPost">Название статьи</h5>
+        <div class="card-img-overlay" to="/post.html">
+          <h5 class="card-title">Название статьи</h5>
         </div>
       </a>
     </section>
@@ -67,5 +65,17 @@
 <script src="assets/js/vue.min.js"></script>
 <script src="./assets/js/main.js"></script>
 <script src="assets/js/data.js"></script>
+<script>
+  export default {
+      computed: {
+          //Это самое вычисляемое свойство
+          layout(){
+              //Вернем имя шаблона из роута или дефолтное значение 
+                //(шаблон для страниц, для которых мы не указали шаблон)
+              return this.$route.meta.layout || "index.html" 
+          }
+      }
+  }
+</script>
 </body>
 </html>

@@ -14,14 +14,14 @@
       <a href="#" class="navbar-brand text-white">Статейка</a>
 
       <nav class="nav">
-        <a href="#" class="nav-link text-white" @click="enterMain">Главная</a>
-        <a href="#" class="nav-link text-white" @click="enterAll">Все статьи</a>
-        <a href="#" class="nav-link text-white" @click="enterManage">Управление статьями</a>
+        <a href="#" class="nav-link text-white" to="/index.html">Главная</a>
+        <a href="#" class="nav-link text-white" to="/all.html">Все статьи</a>
+        <a href="#" class="nav-link text-white" to="/manage.html">Управление статьями</a>
       </nav>
     </div>
   </header>
 
-  <div class="container" v-if="isEdit">
+  <div class="container">
     <section class="py-5">
       <div class="mb-4 d-flex justify-content-between align-items-center">
         <h2>Изменение статьи</h2>
@@ -49,7 +49,13 @@
     </section>
   </div>
 </div>
-<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\vue.js"></script>
-<script src="C:\Users\валя\Desktop\18.02.2023\exam-template\assets\js\main.js"></script>
+<script src="assets/js/vue.min.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="assets/js/data.js"></script>
+<script>
+  export default {
+      name: "edit"
+  }
+</script>
 </body>
 </html>
