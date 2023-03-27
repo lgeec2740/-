@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Статейка</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
 </head>
 <body>
 <div id="app">
@@ -13,13 +15,14 @@
     <div class="container d-flex justify-content-between">
       <a href="#" class="navbar-brand text-white">Статейка</a>
       <nav class="nav">
+        <router-link class="nav-link text-white" to="/foo">Перейти к Foo</router-link>
         <a href="#" class="nav-link text-white" to="/index.html">Главная</a>
         <a href="#" class="nav-link text-white" to="/all.html">Все статьи</a>
         <a href="#" class="nav-link text-white" to="/manage.html">Управление статьями</a>
       </nav>
     </div>
   </header>
-
+<post></post>
   <div class="container">
     <section class="py-5">
       <div class="mb-4 d-flex justify-content-between align-items-center">
@@ -27,8 +30,7 @@
         <button class="btn btn-sm btn-primary" to="/all.html">Все статьи</button>
       </div> 
       <div class="row">
-        <div v-for="(item, index) in articles" 
-        :key="index"
+        <div v-for="item in articles" 
         class="col-3">
           <div class="card">
             <img class="card-img-top" :src="item.image" alt="placeholder">
@@ -62,20 +64,13 @@
     </section>
   </div>
 </div>
-<script src="assets/js/vue.min.js"></script>
+<!-- <script src="assets/js/data.js"></script> -->
+<script src="assets/js/post.js"></script>
 <script src="./assets/js/main.js"></script>
-<script src="assets/js/data.js"></script>
-<script>
-  export default {
-      computed: {
-          //Это самое вычисляемое свойство
-          layout(){
-              //Вернем имя шаблона из роута или дефолтное значение 
-                //(шаблон для страниц, для которых мы не указали шаблон)
-              return this.$route.meta.layout || "index.html" 
-          }
-      }
+<!-- <script>
+ export default {
+      name: "index"
   }
-</script>
+</script> -->
 </body>
 </html>
