@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Статейка</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
 </head>
@@ -15,15 +16,15 @@
     <div class="container d-flex justify-content-between">
       <a href="#" class="navbar-brand text-white">Статейка</a>
       <nav class="nav">
-        <router-link class="nav-link text-white" to="/foo">Перейти к Foo</router-link>
-        <a href="#" class="nav-link text-white" to="/index.html">Главная</a>
-        <a href="#" class="nav-link text-white" to="/all.html">Все статьи</a>
-        <a href="#" class="nav-link text-white" to="/manage.html">Управление статьями</a>
+        <router-link class="nav-link text-white" to="/">Главная</router-link>
+        <router-link class="nav-link text-white" to="/all">Все статьи</router-link>
+        <router-link class="nav-link text-white" to="/manage.html">Управление статьями</router-link>
       </nav>
     </div>
   </header>
-<post></post>
-  <div class="container">
+  <!-- <router-view></router-view> отвечает за отображение контента, путь до которого указан в адресе -->
+  <router-view></router-view>
+  <!-- <div class="container">
     <section class="py-5">
       <div class="mb-4 d-flex justify-content-between align-items-center">
         <h1>Актуальное</h1>
@@ -62,15 +63,10 @@
         </div>
       </a>
     </section>
-  </div>
+  </div> -->
 </div>
-<!-- <script src="assets/js/data.js"></script> -->
+<script src="assets/js/data.js"></script>
 <script src="assets/js/post.js"></script>
 <script src="./assets/js/main.js"></script>
-<!-- <script>
- export default {
-      name: "index"
-  }
-</script> -->
 </body>
 </html>
