@@ -1,5 +1,5 @@
 const Main = Vue.component('Main', { 
-  template: '<div class="container"><section class="py-5"><div class="mb-4 d-flex justify-content-between align-items-center">   <h1>Актуальное</h1>   <button class="btn btn-sm btn-primary" to="/all.html">Все статьи</button> </div>  <div class="row">   <div v-for="item in articles"    class="col-3">     <div class="card">       <img class="card-img-top" :src="item.image" alt="placeholder">       <div class="card-body">         <p class="card-text">           <small class="text-muted">{{item.date}}</small>         </p         <h5 class="card-title">{{item.name}}</h5>         <p class="card-text">{{item.description}}</p         <a href="#" class="btn btn-primary" to="/post.html">Читать</a>       </div>     </div>   </div> </div></section><section class="py-5">  <div class="mb-4 d-flex justify-content-between align-items-center">    <h2>Случайная статья</h2>  </div><a href="#" class="card bg-dark text-white"> <img class="card-img" src="assets/images/placeholder-blue.png" alt="placeholder"> <div class="card-img-overlay" to="/post.html"><h5 class="card-title">Название статьи</h5></div></a></section></div>',
+  template: '<div class="container"><section class="py-5"><div class="mb-4 d-flex justify-content-between align-items-center">   <h1>Актуальное</h1>   <button class="btn btn-sm btn-primary" to="/all.html">Все статьи</button> </div>  <div class="row">   <div v-for="item in articles"    class="col-3">     <div class="card">       <img class="card-img-top" :src="item.image" alt="placeholder">       <div class="card-body">         <p class="card-text">           <small class="text-muted">{{item.date}}</small>         </p         <h5 class="card-title">{{item.name}}</h5>         <p class="card-text">{{item.description}}</p>         <button class="btn btn-primary" to="">Читать</button>       </div>     </div>   </div> </div></section><section class="py-5">  <div class="mb-4 d-flex justify-content-between align-items-center">    <h2>Случайная статья</h2>  </div><a href="#" class="card bg-dark text-white"> <img class="card-img" src="assets/images/placeholder-blue.png" alt="placeholder"> <div class="card-img-overlay" to="/post.html"><h5 class="card-title">Название статьи</h5></div></a></section></div>',
   data(){
     return {
       articles:[
@@ -37,7 +37,7 @@ const Main = Vue.component('Main', {
 }
 )
 
-const All = Vue.component('All', {template:'<div class="container"><section class="py-5">  <div class="mb-4 d-flex  align-items-baseline">    <h2>Все статьи</h2>  </div  <div class="row">    <div  class="cards">      <div class="card" v-for="item in articles">        <img class="card-img-top" :src="item.image" alt="placeholder">        <div class="card-content">          <p class="card-text">            <small class="text-muted">{{item.date}}</small>          </p          <h5 class="card-title">{{item.name}}</h5>          <p class="card-text">{{item.description}}</p          <a href="#" class="btn btn-primary" to="/post.html">Читать</a>        </div>      </div>    </div>  </div></section></div>',
+const All = Vue.component('All', {template:'<div class="container"><section class="py-5">  <div class="mb-4 d-flex  align-items-baseline">    <h2>Все статьи</h2>  </div  <div class="row">    <div  class="cards">      <div class="card" v-for="item in articles">        <img class="card-img-top" :src="item.image" alt="placeholder">        <div class="card-content">          <p class="card-text">            <small class="text-muted">{{item.date}}</small>          </p          <h5 class="card-title">{{item.name}}</h5>          <p class="card-text">{{item.description}}</p>          <button class="btn btn-primary">Читать</button>         </div>      </div>    </div>  </div></section></div>',
   data(){
     return {
       articles: articles,
@@ -66,6 +66,9 @@ const Manage = Vue.component('Manage',{template:'<div class="container"> <sectio
     return{
 
     }
+  },
+  methods:{
+
   }
 })
 
